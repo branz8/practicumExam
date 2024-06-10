@@ -1,0 +1,92 @@
+Name : Brandon Devan
+Student Number: ST10442244
+The link to my code, app and repository: https://github.com/branz8/My-practicum._1/blob/f2921c90249bb8fd2f9eedc6ad042f49d7191c26/app/src/main/res/layout/activity_main.xml
+The reason i created this app is for users to the bweekly weather and an average for the weather. The app is designed to make it easier for people to gain access to weather information and gives a brief description when you get the weather from the appliation
+pseudocode:
+
+SplashActivity
+onCreate()
+Set content view to splash layout
+Wait for 3 seconds
+Start MainActivity
+Finish SplashActivity
+MainActivity
+Properties
+
+temperatures: array of (min, max) pairs
+onCreate()
+
+Set content view to main layout
+Calculate average temperature
+Display average temperature in TextView
+Set listener on view details button to start DetailedViewActivity
+Set listener on clear data button to clear data
+calculateAverageTemperature(temperatures)
+
+Initialize totalMinTemp and totalMaxTemp to 0
+For each temperature in temperatures:
+Add min to totalMinTemp
+Add max to totalMaxTemp
+Calculate average as (totalMinTemp + totalMaxTemp) / (2 * number of temperatures)
+Return average
+DetailedViewActivity
+Properties
+
+daysOfWeek: array of days
+temperatures: array of (min, max) pairs
+weatherConditions: array of weather conditions
+onCreate()
+
+Set content view to detailed view layout
+Enable back button in action bar
+Create weather details array by combining days, temperatures, and conditions
+Set adapter to populate ListView with weather details
+onOptionsItemSelected(item)
+
+If item is back button:
+Finish DetailedViewActivity
+Return true
+Else:
+Return super onOptionsItemSelected(item)
+XML Layouts
+Splash Screen Layout (activity_splash.xml)
+
+RelativeLayout
+ImageView (logo)
+TextView (app name)
+Main Screen Layout (activity_main.xml)
+
+RelativeLayout
+TextView (average temperature)
+Button (view details)
+Button (clear data)
+Detailed View Layout (activity_detailed_view.xml)
+
+Flowchart:
+Start (SplashActivity)
+Display Splash Screen   
+Navigate to MainActivity 
+End (SplashActivity) 
+
+
+Start (MainActivity)
+Initialize temperatures 
+ Calculate Average Temp     
+ - Initialize totalMinTemp  
+ - Initialize totalMaxTemp 
+
+Display average temperature
+View Details Button Clicked?
+Decision(yes or no)
+Clear data   
+End (MainActivity)
+
+Start (DetailedViewActivity)
+Enable back button in action bar
+Create weather details array   
+Back Button Clicked? (yes or no)
+Finish DetailedViewActivity and return to MainActivity
+End (DetailedViewActivity)
+
+
+
